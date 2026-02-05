@@ -1,0 +1,7 @@
+{
+  "name": "@heygen/streaming-avatar",
+  "version": "2.1.0",
+  "description": "HeyGen StreamingAvatar SDK - Type definitions",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

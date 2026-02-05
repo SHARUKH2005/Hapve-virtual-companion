@@ -1,0 +1,26 @@
+# Copyright (C) 2021 Elliot Killick <elliotkillick@zohomail.eu>
+# Licensed under the MIT License. See LICENSE file for details.
+
+stages:
+  - Static Analysis
+
+shellcheck:
+  image: koalaman/shellcheck-alpine:latest
+  stage: Static Analysis
+  before_script:
+    - shellcheck --version
+  script:
+    - find ./ -type f -name '*.sh' | xargs shellcheck --external-sources --source-path=SCRIPTDIR
+    - find ./qubes-rpc/services -type f -name '*' | xargs shellcheck --external-sources --source-path=SCRIPTDIR
+
+pylint:
+  image: python:latest
+  stage: Static Analysis
+  before_script:
+    - python --version
+    - pip --version
+    - pip install pylint
+    - pylint --version
+    - pip install -r ci/requirements.txt
+  script:
+    - find ./ -type f -name '*.py' | xargs pylint --exit-zero
