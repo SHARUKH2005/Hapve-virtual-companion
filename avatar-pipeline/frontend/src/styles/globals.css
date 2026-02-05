@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --fg: #0b0b0b;
+  --muted: #9aa0a6;
+  --accent-start: #00d0ff;
+  --accent-mid: #7a5cff;
+  --accent-end: #ff42b8;
+  --glass: rgba(255,255,255,0.06);
+  --radius-md: 12px;
+  --easing-std: cubic-bezier(.22,.9,.34,1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.hero-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--accent-start) 0%, var(--accent-mid) 50%, var(--accent-end) 100%);
+  transition: all 0.3s var(--easing-std);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 208, 255, 0.3);
+}
+
+.cta-secondary {
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s var(--easing-std);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cta-secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.glass-effect {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* GSAP Animation Classes */
+.pt-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Particle Effects */
+.particle-burst {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Page Transition Overlay */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-mid), var(--accent-end));
+  z-index: 9999;
+  pointer-events: none;
+}

@@ -1,0 +1,6 @@
+# Full stack dependencies (Web3 + relayer-ready pieces).
+# Note: On Windows + Python 3.12, some packages may require C++ build tools.
+
+web3==6.11.3
+eth-account==0.10.0
+

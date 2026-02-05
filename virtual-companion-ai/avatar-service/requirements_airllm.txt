@@ -1,0 +1,6 @@
+# Install these only if you have a supported GPU setup and want PRO/ULTRA modes.
+# Python 3.12 on Windows typically requires Torch >= 2.2.x.
+
+torch>=2.2.0
+airllm
+

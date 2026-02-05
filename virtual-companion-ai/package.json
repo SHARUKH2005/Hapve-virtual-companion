@@ -1,0 +1,40 @@
+{
+    "name": "virtual-companion-ai",
+    "version": "1.0.0",
+    "description": "Decentralized AI companion with blockchain-based identity and ownership",
+    "private": true,
+    "scripts": {
+        "install:all": "npm install && cd blockchain && npm install && cd ../backend && npm install && cd ../frontend && npm install",
+        "blockchain:start": "cd blockchain && npx hardhat node",
+        "blockchain:deploy": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
+        "blockchain:test": "cd blockchain && npx hardhat test",
+        "avatar-service:dev": "cd avatar-service && python -m uvicorn main:app --reload --port 8000",
+        "backend:dev": "cd backend && npm run dev",
+        "backend:build": "cd backend && npm run build",
+        "backend:start": "cd backend && npm start",
+        "frontend:dev": "cd frontend && npm run dev",
+        "frontend:build": "cd frontend && npm run build",
+        "frontend:start": "cd frontend && npm start",
+        "dev": "concurrently -n \"BACKEND,AVATAR,FRONTEND\" -c \"yellow,cyan,magenta\" \"npm run backend:dev\" \"npm run avatar-service:dev\" \"npm run frontend:dev\" --kill-others-on-fail=false",
+        "dev:simple": "concurrently \"npm run frontend:dev\" \"npm run backend:dev\"",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    },
+    "keywords": [
+        "ai",
+        "blockchain",
+        "ethereum",
+        "decentralized",
+        "identity",
+        "siwe",
+        "nft",
+        "virtual-companion"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "eslint": "^8.56.0",
+        "prettier": "^3.1.1"
+    }
+}
