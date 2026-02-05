@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 VIRTUAL COMPANION AI - PROJECT STATUS
 
 **Last Updated:** January 28, 2026, 22:11 IST  
@@ -337,3 +338,7 @@ python main.py
 ---
 
 *Generated: 2026-01-28 | Virtual Companion AI v2.0*
+=======
+# Hapve-virtual-companion
+HAPVE is a blockchain-centric AI platform where users authenticate using their crypto wallet and mint unique AI-driven character NFTs. Each character evolves over time based on user interaction and training. Blockchain ensures secure ownership, transparency, and immutability, while off-chain AI enables adaptive, personalized character growth.
+>>>>>>> 18e90387482482d80e0c86a87d99270a13a06940
